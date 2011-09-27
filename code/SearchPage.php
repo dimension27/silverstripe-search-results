@@ -43,7 +43,8 @@ class SearchPage_Controller extends Page_Controller {
 	 * @see SearchFormDecorator
 	 * @return ViewableData
 	 */
-	function Results( $data, SearchForm $form ) {
+	function results( $data ) {
+		$form = $this->SearchForm();
 		$data = array(
 			'Results' => $form->getResults(),
 			'Query' => $form->getSearchQuery(),

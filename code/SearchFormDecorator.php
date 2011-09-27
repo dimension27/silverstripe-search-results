@@ -15,9 +15,8 @@ class SearchFormDecorator extends Extension {
 
 	/**
 	 * Site search form. The following is the required markup if you want to write it yourself:
-	 * <form action="/search/SearchForm">
+	 * <form action="/search/results">
 	 *	 <input name="Search">
-	 *	 <input type="submit">
 	 * </form>
 	 */
 	function SearchForm( SS_HTTPRequest $request ) {
@@ -29,7 +28,7 @@ class SearchFormDecorator extends Extension {
 		$actions = new FieldSet(new FormAction('Results', _t('SearchPage.DO_SEARCH', 'Search')));
 		
 		$form = new SearchForm($this->owner, 'SearchForm', $fields, $actions);
-		$form->setFormAction(self::$resultsPage.'/SearchForm');
+		$form->setFormAction(self::$resultsPage.'/results');
 		$form->classesToSearch(FulltextSearchable::get_searchable_classes());
 		$form->addExtraClass('search-page-form no-style');
 		$form->getValidator()->setJavascriptValidationHandler('none');
