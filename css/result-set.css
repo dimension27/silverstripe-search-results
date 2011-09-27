@@ -22,8 +22,18 @@
 	display: block;
 }
 
-.pagination {
+.pagination,
+.pagingLinks {
 	clear: both;
+}
+.pagination p {
+	clear: left;
+	float: left;
+	margin-bottom: 5px;
+}
+.pagination a.previousPage,
+.pagination span.previousPage {
+	padding-left: 0;
 }
 a.previousPage:before,
 span.previousPage:before {
@@ -32,12 +42,6 @@ span.previousPage:before {
 a.nextPage:after,
 span.nextPage:after {
 	content: ' >';
-}
-a.previousPage,
-span.previousPage,
-.pageLinks,
-a.nextPage,
-span.nextPage {
 }
 .pagination a,
 .pagination span {
@@ -48,10 +52,5 @@ span.nextPage {
 }
 .pagination span.nextPage,
 .pagination a.nextPage {
-	padding-left: 5px;
 	border: none;
-}
-.pagination p {
-	clear: left;
-	float: left;
 }
