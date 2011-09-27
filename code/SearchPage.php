@@ -22,7 +22,7 @@ class SearchPage extends Page {
 	 * @see SiteTree::requireDefaultRecords()
 	 */
 	function requireDefaultRecords() {
-		if( !DataObject::get('SearchPage')->Count() ) {
+		if( !is_object(DataObject::get('SearchPage')) ) {
 			$page = new SearchPage();
 			$page->Title = _t('SearchPage.DEFAULT_PAGE_TITLE', 'Search');
 			$page->Content = '';
