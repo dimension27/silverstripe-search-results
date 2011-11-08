@@ -11,7 +11,9 @@
 		<% end_if %>
 		</h3></a>
 		<% if Content %>
-			$Content.FirstParagraph(html)
+			<div class="summary">
+				$Content.ContextSummary
+			</div>
 		<% end_if %>
 		<a class="readMore internal" href="$Link" title="Read more about &quot;{$Title}&quot;">Read more about &quot;{$Title}&quot;...</a>
 	</li>

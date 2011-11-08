@@ -8,18 +8,15 @@
 	list-style-image: none !important;
 	width: 100%;
 }
-.resultSet .lc {
-	float: left;
-	width: 170px;
-	margin-right: 10px;
-}
-.resultSet .rc {
-	float: left;
-	width: 350px;
-}
 .resultSet .readMore {
 	font-weight: bold;
 	display: block;
+}
+.resultSet .summary {
+	margin-bottom: 10px;
+}
+.resultSet .highlight {
+	background: yellow;
 }
 
 .pagination,
