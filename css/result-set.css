@@ -19,14 +19,33 @@
 	background: yellow;
 }
 
-.pagination,
-.pagingLinks {
+.pagination {
 	clear: both;
 }
-.pagination p {
-	clear: left;
+.pagingLinks * {
 	float: left;
+}
+ul.pageLinks {
+	margin: 0;
+}
+.pagination li,
+.pagination a,
+.pagination span,
+.pagination p {
+	display: block;
+	float: left;
+}
+.pagination p {
 	margin-bottom: 5px;
+}
+.pagination li,
+.pagination span,
+.pagination .nextPage,
+.pagination .previousPage {
+	list-style: none;
+	margin: 0;
+	padding: 0 5px;
+	border-right: 1px solid;
 }
 .pagination a.previousPage,
 .pagination span.previousPage {
@@ -39,13 +58,6 @@ span.previousPage:before {
 a.nextPage:after,
 span.nextPage:after {
 	content: ' >';
-}
-.pagination a,
-.pagination span {
-	padding: 0 5px;
-	border-right: 1px solid;
-	display: block;
-    float: left;
 }
 .pagination span.nextPage,
 .pagination a.nextPage {

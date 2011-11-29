@@ -7,15 +7,15 @@
 		<% else %>
 		<span class="previousPage">Previous</span>
 		<% end_if %>
-		<div class="pageLinks">
+		<ul class="pageLinks">
 			<% control Results.Pages %>
 			<% if CurrentBool %>
-			<span>$PageNum</span>
+			<li class="current">$PageNum</li>
 			<% else %>
-			<a href="$Link" title="View page number $PageNum">$PageNum</a>
+			<li><a href="$Link" title="View page number $PageNum">$PageNum</a></li>
 			<% end_if %>
 			<% end_control %>
-		</div>
+		</ul>
 		<% if Results.NotLastPage %>
 		<a class="nextPage" href="$Results.NextLink" title="View the next page of results">Next</a>
 		<% else %>
