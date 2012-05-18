@@ -19,22 +19,12 @@ class SearchFormDecorator extends Extension {
 	 *	 <input name="Search">
 	 * </form>
 	 */
-	function SearchForm( SS_HTTPRequest $request ) {
-		$searchText =  _t('SearchFormDecorator.SEARCH', 'Search');
-		if( $this->owner->request ) {
-			$searchText = $this->owner->request->getVar('Search');
-		}
-		$fields = new FieldSet(new TextField('Search', false, $searchText));
-		$actions = new FieldSet(new FormAction('Results', _t('SearchPage.DO_SEARCH', 'Search')));
-		
-		$form = new SearchForm($this->owner, 'SearchForm', $fields, $actions);
+	function SearchForm() {
+		$form = parent::SearchForm();
 		$form->setFormAction(self::$resultsPage.'/results');
-		$form->classesToSearch(FulltextSearchable::get_searchable_classes());
 		$form->addExtraClass('search-page-form no-style');
-		$form->getValidator()->setJavascriptValidationHandler('none');
 		$form->setFormMethod('GET');
 		$form->disableSecurityToken();
-		
 		return $form;
 	}
 

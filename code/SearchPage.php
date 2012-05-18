@@ -51,7 +51,8 @@ class SearchPage_Controller extends Page_Controller {
 			'Title' => 'Search Results'
 		);
 		$this->SearchQuery = $form->getSearchQuery();
-		return $this->customise($data)->renderWith(array('SearchPage_results', 'Page'));
+		$className = get_class($this->owner->data());
+		return $this->customise($data)->renderWith(array($className.'_results', 'SearchPage_results', 'Page'));
 	}
 
 }
